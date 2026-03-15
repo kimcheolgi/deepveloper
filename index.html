@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deepveloper — Full-Stack Developer & Maker</title>
-  <meta name="description" content="Full-stack developer building ad-monetized micro-services with zero operating costs. 7 live projects, all running on Vercel's free tier.">
+  <title>Deepveloper — 풀스택 개발자 & 메이커</title>
+  <meta name="description" content="운영비 $0으로 돌아가는 웹 서비스를 만드는 풀스택 개발자. 7개 라이브 프로젝트, 모두 Vercel 무료 플랜으로 운영 중.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Deepveloper — Full-Stack Developer & Maker">
-  <meta property="og:description" content="I build web services that cost $0 to run. 7 live projects with unique mascots.">
+  <meta property="og:title" content="Deepveloper — 풀스택 개발자 & 메이커">
   <meta property="og:url" content="https://blog.deepveloper.com">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Deepveloper — Full-Stack Developer & Maker">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="canonical" href="https://blog.deepveloper.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,17 +21,14 @@
     a { text-decoration: none; color: inherit; }
     .mono { font-family: 'JetBrains Mono', monospace; }
 
-    /* Animations */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes glow { 0%,100% { opacity: 0.4; } 50% { opacity: 0.7; } }
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
     .fade-up { animation: fadeUp 0.7s ease both; }
     .fade-up-1 { animation-delay: 0.08s; } .fade-up-2 { animation-delay: 0.16s; }
     .fade-up-3 { animation-delay: 0.24s; } .fade-up-4 { animation-delay: 0.32s; }
     .fade-up-5 { animation-delay: 0.40s; } .fade-up-6 { animation-delay: 0.48s; }
 
-    /* Background */
     .bg-grid { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
     .bg-grid .line-v { position: absolute; top: 0; width: 1px; height: 100%; background: linear-gradient(180deg, transparent, rgba(99,102,241,0.03), transparent); }
     .bg-grid .line-h { position: absolute; left: 0; height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(99,102,241,0.03), transparent); }
@@ -41,25 +36,23 @@
     .bg-orb-1 { top: 15%; left: 20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(99,102,241,0.04) 0%, transparent 70%); animation: glow 6s ease-in-out infinite; }
     .bg-orb-2 { top: 60%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(16,185,129,0.03) 0%, transparent 70%); animation: glow 8s ease-in-out 2s infinite; }
 
-    /* Nav */
     nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 32px; position: sticky; top: 0; z-index: 100; transition: all 0.3s; border-bottom: 1px solid transparent; }
     nav.scrolled { background: rgba(10,10,15,0.88); backdrop-filter: blur(20px); border-bottom-color: rgba(99,102,241,0.1); }
     .nav-logo { font-size: 20px; font-weight: 900; letter-spacing: -1px; }
     .nav-logo .accent { color: #6366F1; }
-    .nav-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 500; }
     .nav-links a { color: #71717A; transition: color 0.2s; }
     .nav-links a:hover { color: #E4E4E7; }
+    .lang-btn { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: #A5B4FC; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'JetBrains Mono', monospace; transition: all 0.2s; }
+    .lang-btn:hover { background: rgba(99,102,241,0.2); }
 
-    /* Sections */
     .container { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
     .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6366F1; font-weight: 600; letter-spacing: 2px; margin-bottom: 8px; }
     .section-title { font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 32px; }
 
-    /* Hero */
     .hero { padding: 80px 32px 60px; }
     .hero h1 { font-size: clamp(32px, 6vw, 56px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; }
-    .hero h1 .hl-purple { color: #6366F1; }
-    .hero h1 .hl-green { color: #10B981; }
+    .hl-purple { color: #6366F1; } .hl-green { color: #10B981; }
     .hero p { font-size: 17px; color: #A1A1AA; line-height: 1.8; max-width: 560px; font-weight: 400; }
     .hero-badges { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
     .hero-badge { display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; }
@@ -67,7 +60,6 @@
     .hero-badge.green { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.15); color: #6EE7B7; }
     .hero-badge.pink { background: rgba(244,114,182,0.08); border: 1px solid rgba(244,114,182,0.15); color: #F9A8D4; }
 
-    /* Project Cards */
     .projects { padding: 40px 32px 60px; }
     .project-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px 28px; transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; position: relative; margin-bottom: 16px; }
     .project-card:hover { transform: translateY(-8px) scale(1.01); }
@@ -84,14 +76,12 @@
     .project-desc { font-size: 13px; color: #A1A1AA; line-height: 1.7; margin-bottom: 14px; }
     .project-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     .tech-pills { display: flex; gap: 5px; flex-wrap: wrap; }
-    .tech-pill { font-size: 10px; font-weight: 600; color: #A1A1AA; padding: 3px 8px; border-radius: 5px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); font-family: 'JetBrains Mono', monospace; transition: all 0.2s; }
-    .tech-pill:hover { transform: translateY(-1px); filter: brightness(1.2); }
+    .tech-pill { font-size: 10px; font-weight: 600; color: #A1A1AA; padding: 3px 8px; border-radius: 5px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); font-family: 'JetBrains Mono', monospace; }
     .project-stats { display: flex; gap: 12px; }
     .stat { text-align: center; }
     .stat-value { font-size: 14px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
     .stat-label { font-size: 9px; color: #71717A; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    /* Philosophy */
     .philosophy { padding: 40px 32px 60px; }
     .philo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
     .philo-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 20px; }
@@ -99,13 +89,10 @@
     .philo-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
     .philo-desc { font-size: 12px; color: #A1A1AA; line-height: 1.65; }
 
-    /* Tech Stack */
     .techstack { padding: 20px 32px 60px; }
     .stack-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-    .stack-pill { font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12); color: #A5B4FC; font-family: 'JetBrains Mono', monospace; transition: all 0.2s; }
-    .stack-pill:hover { transform: translateY(-1px); filter: brightness(1.2); }
+    .stack-pill { font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12); color: #A5B4FC; font-family: 'JetBrains Mono', monospace; }
 
-    /* Timeline */
     .timeline { padding: 20px 32px 60px; }
     .timeline-list { border-left: 2px solid rgba(99,102,241,0.15); padding-left: 24px; }
     .timeline-item { position: relative; margin-bottom: 20px; }
@@ -113,7 +100,25 @@
     .timeline-date { font-size: 11px; font-weight: 600; color: #6366F1; font-family: 'JetBrains Mono', monospace; margin-bottom: 2px; }
     .timeline-text { font-size: 14px; font-weight: 600; }
 
-    /* Contact */
+    /* History */
+    .history { padding: 20px 32px 60px; }
+    .history-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .history-tab { padding: 6px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; border: 1px solid rgba(99,102,241,0.15); color: #71717A; background: transparent; transition: all 0.2s; font-family: 'Outfit', sans-serif; }
+    .history-tab.active { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.3); color: #A5B4FC; }
+    .history-panel { display: none; }
+    .history-panel.active { display: block; }
+    .history-list { border-left: 2px solid rgba(99,102,241,0.15); padding-left: 24px; }
+    .history-item { position: relative; margin-bottom: 24px; }
+    .history-item:last-child { margin-bottom: 0; }
+    .history-dot { position: absolute; left: -31px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: #6366F1; border: 2px solid #0A0A0F; }
+    .history-period { font-size: 11px; font-weight: 600; color: #6366F1; font-family: 'JetBrains Mono', monospace; margin-bottom: 3px; }
+    .history-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+    .history-sub { font-size: 12px; color: #A1A1AA; font-weight: 500; }
+    .history-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; margin-left: 8px; vertical-align: middle; }
+    .badge-edu { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: #A5B4FC; }
+    .badge-patent { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); color: #FCD34D; }
+    .badge-paper { background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.2); color: #F9A8D4; }
+
     .contact { padding: 40px 32px 80px; }
     .contact-box { background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(16,185,129,0.04)); border: 1px solid rgba(99,102,241,0.12); border-radius: 20px; padding: 40px 36px; text-align: center; }
     .contact-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
@@ -122,20 +127,18 @@
     .contact-link { display: flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); font-size: 13px; font-weight: 600; transition: all 0.2s; }
     .contact-link:hover { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.2); }
 
-    /* Footer */
     footer { padding: 24px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.04); }
     footer .logo { font-size: 12px; color: #3F3F46; font-family: 'JetBrains Mono', monospace; }
     footer .logo .accent { color: #6366F1; }
     footer .copy { font-size: 11px; color: #27272A; font-family: 'JetBrains Mono', monospace; margin-top: 4px; }
 
-    /* Mobile */
     @media (max-width: 640px) {
       .hero { padding: 50px 20px 40px; }
       .hero h1 { font-size: 28px; letter-spacing: -1px; }
       .hero p { font-size: 15px; }
-      .projects, .philosophy, .techstack, .timeline, .contact { padding-left: 20px; padding-right: 20px; }
+      .projects, .philosophy, .techstack, .timeline, .history, .contact { padding-left: 20px; padding-right: 20px; }
       .project-card { padding: 18px 20px; }
-      .nav-links { gap: 14px; font-size: 12px; }
+      .nav-links { gap: 12px; font-size: 12px; }
       nav { padding: 12px 20px; }
       .section-title { font-size: 22px; }
       .philo-grid { grid-template-columns: 1fr; }
@@ -144,7 +147,6 @@
 </head>
 <body>
 
-  <!-- Background -->
   <div class="bg-grid">
     <div class="line-v" style="left:12.5%"></div><div class="line-v" style="left:25%"></div>
     <div class="line-v" style="left:37.5%"></div><div class="line-v" style="left:50%"></div>
@@ -159,51 +161,50 @@
     <div class="bg-orb bg-orb-2"></div>
   </div>
 
-  <!-- Nav -->
   <nav id="nav">
     <div class="nav-logo mono"><span class="accent">&lt;</span>Deep<span class="accent">veloper</span><span class="accent">/&gt;</span></div>
     <div class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#contact">Contact</a>
+      <a href="#projects" class="t" data-ko="프로젝트" data-en="Projects">프로젝트</a>
+      <a href="#history" class="t" data-ko="이력" data-en="History">이력</a>
+      <a href="#philosophy" class="t" data-ko="철학" data-en="Philosophy">철학</a>
+      <a href="#contact" class="t" data-ko="연락" data-en="Contact">연락</a>
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero container fade-up">
-    <div class="section-label mono">FULL-STACK DEVELOPER & MAKER</div>
-    <h1>I build<span class="hl-purple"> web services</span><br>that cost<span class="hl-green"> $0</span> to run.</h1>
-    <p>Full-stack developer obsessed with building ad-monetized micro-services with zero operating costs. Each project has its own personality, mascot, and revenue strategy — all deployed on Vercel's free tier.</p>
+    <div class="section-label mono t" data-ko="풀스택 개발자 & 메이커" data-en="FULL-STACK DEVELOPER & MAKER">풀스택 개발자 & 메이커</div>
+    <h1 id="hero-h1">운영비 <span class="hl-green">$0으로</span> 돌아가는<br>웹 서비스를 만듭니다.</h1>
+    <p class="t" data-ko="광고 수익으로 운영되는 마이크로 서비스를 만드는 풀스택 개발자입니다. 운영 비용은 $0, 각 프로젝트는 고유한 개성과 마스코트를 갖추고 모두 Vercel 무료 플랜으로 배포되어 있습니다." data-en="Full-stack developer obsessed with building ad-monetized micro-services with zero operating costs. Each project has its own personality, mascot, and revenue strategy — all deployed on Vercel's free tier.">광고 수익으로 운영되는 마이크로 서비스를 만드는 풀스택 개발자입니다. 운영 비용은 $0, 각 프로젝트는 고유한 개성과 마스코트를 갖추고 모두 Vercel 무료 플랜으로 배포되어 있습니다.</p>
     <div class="hero-badges">
-      <div class="hero-badge purple"><span>🚀</span> 7 Live Projects</div>
-      <div class="hero-badge green"><span>💰</span> $0/month Total Cost</div>
-      <div class="hero-badge pink"><span>🌐</span> 4 Languages Supported</div>
+      <div class="hero-badge purple"><span>🚀</span> <span class="t" data-ko="7개 라이브 프로젝트" data-en="7 Live Projects">7개 라이브 프로젝트</span></div>
+      <div class="hero-badge green"><span>💰</span> <span class="t" data-ko="월 운영비 $0" data-en="$0/month Total Cost">월 운영비 $0</span></div>
+      <div class="hero-badge pink"><span>🌐</span> <span class="t" data-ko="4개 언어 지원" data-en="4 Languages Supported">4개 언어 지원</span></div>
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects" class="projects container">
-    <div class="section-label mono">PROJECTS</div>
-    <h2 class="section-title">Every service. Zero server costs.</h2>
+    <div class="section-label mono t" data-ko="프로젝트" data-en="PROJECTS">프로젝트</div>
+    <h2 class="section-title t" data-ko="모든 서비스, 서버 비용 $0." data-en="Every service. Zero server costs.">모든 서비스, 서버 비용 $0.</h2>
 
     <div class="project-card fade-up fade-up-1" style="--accent:#D4A574" onclick="window.open('https://capybar.dev','_blank')">
       <div class="project-header">
         <div class="project-info">
           <img class="project-mascot" src="https://capybar.dev/favicon.ico" alt="CapyBar" style="animation-delay:0s">
           <div>
-            <div class="project-name">CapyBar <span class="project-cat" style="color:#D4A574;background:#D4A57415;border:1px solid #D4A57425">Developer Tools</span></div>
-            <div class="project-tagline">Your chill developer toolkit</div>
+            <div class="project-name">CapyBar <span class="project-cat t" style="color:#D4A574;background:#D4A57415;border:1px solid #D4A57425" data-ko="개발자 도구" data-en="Developer Tools">개발자 도구</span></div>
+            <div class="project-tagline t" data-ko="여유로운 개발자 툴킷" data-en="Your chill developer toolkit">여유로운 개발자 툴킷</div>
           </div>
         </div>
         <a href="https://capybar.dev" target="_blank" class="project-url" style="color:#D4A574;border:1px solid #D4A57440" onclick="event.stopPropagation()">capybar.dev ↗</a>
       </div>
-      <p class="project-desc">11 free developer tools: JSON formatter, Base64, JWT decoder, UUID generator, password generator, color converter, and more. Capybara mascot included.</p>
+      <p class="project-desc t" data-ko="11가지 무료 개발자 도구: JSON 포매터, Base64, JWT 디코더, UUID 생성기, 비밀번호 생성기, 색상 변환기 등. 카피바라 마스코트 포함." data-en="11 free developer tools: JSON formatter, Base64, JWT decoder, UUID generator, password generator, color converter, and more. Capybara mascot included.">11가지 무료 개발자 도구: JSON 포매터, Base64, JWT 디코더, UUID 생성기, 비밀번호 생성기, 색상 변환기 등. 카피바라 마스코트 포함.</p>
       <div class="project-footer">
         <div class="tech-pills"><span class="tech-pill">React</span><span class="tech-pill">Vite</span><span class="tech-pill">Vercel</span></div>
         <div class="project-stats">
-          <div class="stat"><div class="stat-value" style="color:#D4A574">11+</div><div class="stat-label">tools</div></div>
-          <div class="stat"><div class="stat-value" style="color:#D4A574">3</div><div class="stat-label">languages</div></div>
-          <div class="stat"><div class="stat-value" style="color:#D4A574">$0</div><div class="stat-label">cost</div></div>
+          <div class="stat"><div class="stat-value" style="color:#D4A574">11+</div><div class="stat-label t" data-ko="도구" data-en="tools">도구</div></div>
+          <div class="stat"><div class="stat-value" style="color:#D4A574">3</div><div class="stat-label t" data-ko="언어" data-en="langs">언어</div></div>
+          <div class="stat"><div class="stat-value" style="color:#D4A574">$0</div><div class="stat-label t" data-ko="비용" data-en="cost">비용</div></div>
         </div>
       </div>
     </div>
@@ -213,19 +214,19 @@
         <div class="project-info">
           <img class="project-mascot" src="https://quokkatick.com/icon.png" alt="QuokkaTick" style="animation-delay:0.3s">
           <div>
-            <div class="project-name">QuokkaTick <span class="project-cat" style="color:#10B981;background:#10B98115;border:1px solid #10B98125">Utility</span></div>
-            <div class="project-tagline">Live server time, ticking in real-time</div>
+            <div class="project-name">QuokkaTick <span class="project-cat t" style="color:#10B981;background:#10B98115;border:1px solid #10B98125" data-ko="유틸리티" data-en="Utility">유틸리티</span></div>
+            <div class="project-tagline t" data-ko="실시간으로 째깍이는 서버 시간" data-en="Live server time, ticking in real-time">실시간으로 째깍이는 서버 시간</div>
           </div>
         </div>
         <a href="https://quokkatick.com" target="_blank" class="project-url" style="color:#10B981;border:1px solid #10B98140" onclick="event.stopPropagation()">quokkatick.com ↗</a>
       </div>
-      <p class="project-desc">Real-time server time checker with millisecond precision. Enter any URL and watch the server's clock tick live — perfect for ticketing and course registration.</p>
+      <p class="project-desc t" data-ko="밀리초 단위의 실시간 서버 시간 확인기. URL을 입력하면 서버 시계가 실시간으로 표시됩니다. 티켓팅, 수강신청에 최적." data-en="Real-time server time checker with millisecond precision. Enter any URL and watch the server's clock tick live — perfect for ticketing and course registration.">밀리초 단위의 실시간 서버 시간 확인기. URL을 입력하면 서버 시계가 실시간으로 표시됩니다. 티켓팅, 수강신청에 최적.</p>
       <div class="project-footer">
         <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">Serverless</span><span class="tech-pill">rAF</span></div>
         <div class="project-stats">
-          <div class="stat"><div class="stat-value" style="color:#10B981">ms</div><div class="stat-label">precision</div></div>
-          <div class="stat"><div class="stat-value" style="color:#10B981">30s</div><div class="stat-label">sync</div></div>
-          <div class="stat"><div class="stat-value" style="color:#10B981">$0</div><div class="stat-label">cost</div></div>
+          <div class="stat"><div class="stat-value" style="color:#10B981">ms</div><div class="stat-label t" data-ko="정밀도" data-en="precision">정밀도</div></div>
+          <div class="stat"><div class="stat-value" style="color:#10B981">30s</div><div class="stat-label t" data-ko="동기화" data-en="sync">동기화</div></div>
+          <div class="stat"><div class="stat-value" style="color:#10B981">$0</div><div class="stat-label t" data-ko="비용" data-en="cost">비용</div></div>
         </div>
       </div>
     </div>
@@ -235,19 +236,19 @@
         <div class="project-info">
           <img class="project-mascot" src="/favicon.ico" alt="PureTxt" style="animation-delay:0.6s">
           <div>
-            <div class="project-name">PureTxt <span class="project-cat" style="color:#2563EB;background:#2563EB15;border:1px solid #2563EB25">Text Tools</span></div>
-            <div class="project-tagline">Clean text tools for everyone</div>
+            <div class="project-name">PureTxt <span class="project-cat t" style="color:#2563EB;background:#2563EB15;border:1px solid #2563EB25" data-ko="텍스트 도구" data-en="Text Tools">텍스트 도구</span></div>
+            <div class="project-tagline t" data-ko="누구나 쓰는 깔끔한 텍스트 도구" data-en="Clean text tools for everyone">누구나 쓰는 깔끔한 텍스트 도구</div>
           </div>
         </div>
         <a href="https://puretxt.xyz" target="_blank" class="project-url" style="color:#2563EB;border:1px solid #2563EB40" onclick="event.stopPropagation()">puretxt.xyz ↗</a>
       </div>
-      <p class="project-desc">4 essential text tools: grammar checker (LanguageTool), character counter, markdown preview, and text transformer. Supports English, Japanese, and Chinese.</p>
+      <p class="project-desc t" data-ko="4가지 필수 텍스트 도구: 문법 검사기(LanguageTool), 글자 수 세기, 마크다운 미리보기, 텍스트 변환. 영어·일본어·중국어 지원." data-en="4 essential text tools: grammar checker (LanguageTool), character counter, markdown preview, and text transformer. Supports English, Japanese, and Chinese.">4가지 필수 텍스트 도구: 문법 검사기(LanguageTool), 글자 수 세기, 마크다운 미리보기, 텍스트 변환. 영어·일본어·중국어 지원.</p>
       <div class="project-footer">
         <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">LanguageTool</span><span class="tech-pill">Vercel</span></div>
         <div class="project-stats">
-          <div class="stat"><div class="stat-value" style="color:#2563EB">4</div><div class="stat-label">tools</div></div>
-          <div class="stat"><div class="stat-value" style="color:#2563EB">3</div><div class="stat-label">languages</div></div>
-          <div class="stat"><div class="stat-value" style="color:#2563EB">$0</div><div class="stat-label">cost</div></div>
+          <div class="stat"><div class="stat-value" style="color:#2563EB">4</div><div class="stat-label t" data-ko="도구" data-en="tools">도구</div></div>
+          <div class="stat"><div class="stat-value" style="color:#2563EB">3</div><div class="stat-label t" data-ko="언어" data-en="langs">언어</div></div>
+          <div class="stat"><div class="stat-value" style="color:#2563EB">$0</div><div class="stat-label t" data-ko="비용" data-en="cost">비용</div></div>
         </div>
       </div>
     </div>
@@ -257,19 +258,19 @@
         <div class="project-info">
           <img class="project-mascot" src="https://promptneon.com/favicon.ico" alt="PromptNeon" style="animation-delay:0.9s">
           <div>
-            <div class="project-name">PromptNeon <span class="project-cat" style="color:#06B6D4;background:#06B6D415;border:1px solid #06B6D425">AI / Prompts</span></div>
-            <div class="project-tagline">Curated AI prompts, neon-powered</div>
+            <div class="project-name">PromptNeon <span class="project-cat t" style="color:#06B6D4;background:#06B6D415;border:1px solid #06B6D425" data-ko="AI / 프롬프트" data-en="AI / Prompts">AI / 프롬프트</span></div>
+            <div class="project-tagline t" data-ko="큐레이션된 AI 프롬프트, 네온으로" data-en="Curated AI prompts, neon-powered">큐레이션된 AI 프롬프트, 네온으로</div>
           </div>
         </div>
         <a href="https://promptneon.com" target="_blank" class="project-url" style="color:#06B6D4;border:1px solid #06B6D440" onclick="event.stopPropagation()">promptneon.com ↗</a>
       </div>
-      <p class="project-desc">Free curated collection of ready-to-use AI prompts for ChatGPT and Claude. Browse by category — coding, writing, marketing, business. One-click copy.</p>
+      <p class="project-desc t" data-ko="ChatGPT와 Claude를 위한 무료 AI 프롬프트 컬렉션. 코딩, 글쓰기, 마케팅, 비즈니스 카테고리별 탐색. 원클릭 복사." data-en="Free curated collection of ready-to-use AI prompts for ChatGPT and Claude. Browse by category — coding, writing, marketing, business. One-click copy.">ChatGPT와 Claude를 위한 무료 AI 프롬프트 컬렉션. 코딩, 글쓰기, 마케팅, 비즈니스 카테고리별 탐색. 원클릭 복사.</p>
       <div class="project-footer">
         <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">SSG</span><span class="tech-pill">Vercel</span></div>
         <div class="project-stats">
-          <div class="stat"><div class="stat-value" style="color:#06B6D4">8+</div><div class="stat-label">categories</div></div>
-          <div class="stat"><div class="stat-value" style="color:#06B6D4">2</div><div class="stat-label">models</div></div>
-          <div class="stat"><div class="stat-value" style="color:#06B6D4">$0</div><div class="stat-label">cost</div></div>
+          <div class="stat"><div class="stat-value" style="color:#06B6D4">8+</div><div class="stat-label t" data-ko="카테고리" data-en="categories">카테고리</div></div>
+          <div class="stat"><div class="stat-value" style="color:#06B6D4">2</div><div class="stat-label t" data-ko="모델" data-en="models">모델</div></div>
+          <div class="stat"><div class="stat-value" style="color:#06B6D4">$0</div><div class="stat-label t" data-ko="비용" data-en="cost">비용</div></div>
         </div>
       </div>
     </div>
@@ -279,19 +280,19 @@
         <div class="project-info">
           <img class="project-mascot" src="https://doodlechill.com/favicon.ico" alt="DoodleChill" style="animation-delay:1.2s">
           <div>
-            <div class="project-name">DoodleChill <span class="project-cat" style="color:#F59E0B;background:#F59E0B15;border:1px solid #F59E0B25">Focus / Wellness</span></div>
-            <div class="project-tagline">Hand-drawn scenes with ambient sounds</div>
+            <div class="project-name">DoodleChill <span class="project-cat t" style="color:#F59E0B;background:#F59E0B15;border:1px solid #F59E0B25" data-ko="집중 / 웰니스" data-en="Focus / Wellness">집중 / 웰니스</span></div>
+            <div class="project-tagline t" data-ko="손그림 배경과 앰비언트 사운드" data-en="Hand-drawn scenes with ambient sounds">손그림 배경과 앰비언트 사운드</div>
           </div>
         </div>
         <a href="https://doodlechill.com" target="_blank" class="project-url" style="color:#F59E0B;border:1px solid #F59E0B40" onclick="event.stopPropagation()">doodlechill.com ↗</a>
       </div>
-      <p class="project-desc">Distraction-free ambient sound player with 7 cozy hand-drawn doodle scenes. Built-in Pomodoro timer. Designed for 45-120 minute focus sessions.</p>
+      <p class="project-desc t" data-ko="7개의 아늑한 손그림 장면과 함께하는 앰비언트 사운드 플레이어. 내장 포모도로 타이머. 45~120분 집중 세션에 최적화." data-en="Distraction-free ambient sound player with 7 cozy hand-drawn doodle scenes. Built-in Pomodoro timer. Designed for 45-120 minute focus sessions.">7개의 아늑한 손그림 장면과 함께하는 앰비언트 사운드 플레이어. 내장 포모도로 타이머. 45~120분 집중 세션에 최적화.</p>
       <div class="project-footer">
         <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">Web Audio</span><span class="tech-pill">SVG Anim</span></div>
         <div class="project-stats">
-          <div class="stat"><div class="stat-value" style="color:#F59E0B">7</div><div class="stat-label">scenes</div></div>
-          <div class="stat"><div class="stat-value" style="color:#F59E0B">🍅</div><div class="stat-label">timer</div></div>
-          <div class="stat"><div class="stat-value" style="color:#F59E0B">$0</div><div class="stat-label">cost</div></div>
+          <div class="stat"><div class="stat-value" style="color:#F59E0B">7</div><div class="stat-label t" data-ko="장면" data-en="scenes">장면</div></div>
+          <div class="stat"><div class="stat-value" style="color:#F59E0B">🍅</div><div class="stat-label t" data-ko="타이머" data-en="timer">타이머</div></div>
+          <div class="stat"><div class="stat-value" style="color:#F59E0B">$0</div><div class="stat-label t" data-ko="비용" data-en="cost">비용</div></div>
         </div>
       </div>
     </div>
@@ -301,19 +302,92 @@
         <div class="project-info">
           <img class="project-mascot" src="https://seokoala.dev/icon.png" alt="SEOKoala" style="animation-delay:1.5s">
           <div>
-            <div class="project-name">SEOKoala <span class="project-cat" style="color:#059669;background:#05966915;border:1px solid #05966925">SEO Tools</span></div>
-            <div class="project-tagline">Your friendly SEO checkup</div>
+            <div class="project-name">SEOKoala <span class="project-cat t" style="color:#059669;background:#05966915;border:1px solid #05966925" data-ko="SEO 도구" data-en="SEO Tools">SEO 도구</span></div>
+            <div class="project-tagline t" data-ko="친근한 SEO 건강검진" data-en="Your friendly SEO checkup">친근한 SEO 건강검진</div>
           </div>
         </div>
         <a href="https://seokoala.dev" target="_blank" class="project-url" style="color:#059669;border:1px solid #05966940" onclick="event.stopPropagation()">seokoala.dev ↗</a>
       </div>
-      <p class="project-desc">Free SEO audit dashboard: enter a URL and get instant diagnosis on meta tags, structure, social previews, and technical SEO. Koala mascot judges your score.</p>
+      <p class="project-desc t" data-ko="무료 SEO 감사 대시보드: URL을 입력하면 메타태그, 구조, 소셜 미리보기, 기술 SEO를 즉시 진단. 코알라 마스코트가 점수를 판정." data-en="Free SEO audit dashboard: enter a URL and get instant diagnosis on meta tags, structure, social previews, and technical SEO. Koala mascot judges your score.">무료 SEO 감사 대시보드: URL을 입력하면 메타태그, 구조, 소셜 미리보기, 기술 SEO를 즉시 진단. 코알라 마스코트가 점수를 판정.</p>
       <div class="project-footer">
         <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">Serverless</span><span class="tech-pill">HTML Parser</span></div>
         <div class="project-stats">
-          <div class="stat"><div class="stat-value" style="color:#059669">18+</div><div class="stat-label">checks</div></div>
-          <div class="stat"><div class="stat-value" style="color:#059669">AI</div><div class="stat-label">keywords</div></div>
-          <div class="stat"><div class="stat-value" style="color:#059669">$0</div><div class="stat-label">cost</div></div>
+          <div class="stat"><div class="stat-value" style="color:#059669">18+</div><div class="stat-label t" data-ko="검사항목" data-en="checks">검사항목</div></div>
+          <div class="stat"><div class="stat-value" style="color:#059669">AI</div><div class="stat-label t" data-ko="키워드" data-en="keywords">키워드</div></div>
+          <div class="stat"><div class="stat-value" style="color:#059669">$0</div><div class="stat-label t" data-ko="비용" data-en="cost">비용</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section id="history" class="history container">
+    <div class="section-label mono t" data-ko="이력" data-en="HISTORY">이력</div>
+    <h2 class="section-title t" data-ko="학력 · 경력 · 연구." data-en="Education · Career · Research.">학력 · 경력 · 연구.</h2>
+    <div class="history-tabs">
+      <button class="history-tab active" onclick="switchTab('edu')" id="tab-edu"><span class="t" data-ko="학력" data-en="Education">학력</span></button>
+      <button class="history-tab" onclick="switchTab('career')" id="tab-career"><span class="t" data-ko="경력" data-en="Career">경력</span></button>
+      <button class="history-tab" onclick="switchTab('research')" id="tab-research"><span class="t" data-ko="논문 · 특허" data-en="Research & Patents">논문 · 특허</span></button>
+    </div>
+
+    <div class="history-panel active" id="panel-edu">
+      <div class="history-list">
+        <div class="history-item fade-up">
+          <div class="history-dot"></div>
+          <div class="history-period mono">2018.03 — 2020.02</div>
+          <div class="history-title"><span class="t" data-ko="숭실대학교" data-en="Soongsil University">숭실대학교</span><span class="history-badge badge-edu t" data-ko="석사" data-en="M.S.">석사</span></div>
+          <div class="history-sub t" data-ko="IT대학 융합소프트웨어학과" data-en="Dept. of Convergence Software, College of IT">IT대학 융합소프트웨어학과</div>
+        </div>
+        <div class="history-item fade-up fade-up-1">
+          <div class="history-dot" style="background:#10B981"></div>
+          <div class="history-period mono">2011.03 — 2018.02</div>
+          <div class="history-title"><span class="t" data-ko="강원대학교" data-en="Kangwon National University">강원대학교</span><span class="history-badge badge-edu t" data-ko="학사" data-en="B.S.">학사</span></div>
+          <div class="history-sub t" data-ko="컴퓨터정보통신공학과" data-en="Dept. of Computer & Information Communications Engineering">컴퓨터정보통신공학과</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="history-panel" id="panel-career">
+      <div class="history-list">
+        <div class="history-item fade-up">
+          <div class="history-dot" style="background:#F59E0B"></div>
+          <div class="history-period mono">2023.10 — 2025.06</div>
+          <div class="history-title"><span class="t" data-ko="멋쟁이사자처럼" data-en="Likelion">멋쟁이사자처럼</span></div>
+        </div>
+        <div class="history-item fade-up fade-up-1">
+          <div class="history-dot" style="background:#06B6D4"></div>
+          <div class="history-period mono">2023.04 — 2023.09</div>
+          <div class="history-title"><span class="t" data-ko="체인익스프레스빌" data-en="ChainExpressBill">체인익스프레스빌</span></div>
+        </div>
+        <div class="history-item fade-up fade-up-2">
+          <div class="history-dot" style="background:#10B981"></div>
+          <div class="history-period mono">2020.01 — 2023.04</div>
+          <div class="history-title"><span class="t" data-ko="게임아이" data-en="GameEye">게임아이</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="history-panel" id="panel-research">
+      <div class="history-list">
+        <div class="history-item fade-up">
+          <div class="history-dot" style="background:#F9A8D4"></div>
+          <div class="history-period mono"><span class="history-badge badge-paper t" style="margin-left:0" data-ko="논문" data-en="Thesis">논문</span></div>
+          <div class="history-title t" data-ko="양방향 LSTM 임베딩을 이용한 MOBA 장르 게임 승패 예측" data-en="MOBA Game Win/Loss Prediction using Bidirectional LSTM Embedding">양방향 LSTM 임베딩을 이용한 MOBA 장르 게임 승패 예측</div>
+        </div>
+        <div class="history-item fade-up fade-up-1">
+          <div class="history-dot" style="background:#FCD34D"></div>
+          <div class="history-period mono"><span class="history-badge badge-patent t" style="margin-left:0" data-ko="특허 (등록)" data-en="Patent (Registered)">특허 (등록)</span></div>
+          <div class="history-title t" data-ko="게임 승부 예측 방법 및 장치" data-en="Game Result Prediction Method and Apparatus">게임 승부 예측 방법 및 장치</div>
+        </div>
+        <div class="history-item fade-up fade-up-2">
+          <div class="history-dot" style="background:#FCD34D"></div>
+          <div class="history-period mono"><span class="history-badge badge-patent t" style="margin-left:0" data-ko="특허 (등록)" data-en="Patent (Registered)">특허 (등록)</span></div>
+          <div class="history-title t" data-ko="팀 대항 게임 우세도 예측 장치 및 방법" data-en="Team Game Advantage Prediction Apparatus and Method">팀 대항 게임 우세도 예측 장치 및 방법</div>
+        </div>
+        <div class="history-item fade-up fade-up-3">
+          <div class="history-dot" style="background:#FCD34D"></div>
+          <div class="history-period mono"><span class="history-badge badge-patent t" style="margin-left:0" data-ko="특허 (등록)" data-en="Patent (Registered)">특허 (등록)</span></div>
+          <div class="history-title t" data-ko="플레이어 역량 평가 장치 및 방법" data-en="Player Capability Evaluation Apparatus and Method">플레이어 역량 평가 장치 및 방법</div>
         </div>
       </div>
     </div>
@@ -321,22 +395,22 @@
 
   <!-- Philosophy -->
   <section id="philosophy" class="philosophy container">
-    <div class="section-label mono">PHILOSOPHY</div>
-    <h2 class="section-title">How I build things.</h2>
+    <div class="section-label mono t" data-ko="철학" data-en="PHILOSOPHY">철학</div>
+    <h2 class="section-title t" data-ko="내가 만드는 방식." data-en="How I build things.">내가 만드는 방식.</h2>
     <div class="philo-grid">
-      <div class="philo-card fade-up"><div class="philo-icon">💸</div><div class="philo-title">$0 Operating Cost</div><div class="philo-desc">Every service runs on Vercel's free tier. No database fees, no server bills. Pure front-end + serverless.</div></div>
-      <div class="philo-card fade-up fade-up-1"><div class="philo-icon">🎨</div><div class="philo-title">Unique Mascots</div><div class="philo-desc">Each service has its own personality — capybara, quokka, koala, neon, doodles. No generic SaaS templates.</div></div>
-      <div class="philo-card fade-up fade-up-2"><div class="philo-icon">🌐</div><div class="philo-title">Multilingual</div><div class="philo-desc">Most services support 3-4 languages (Korean, English, Japanese, Chinese) to reach global audiences.</div></div>
-      <div class="philo-card fade-up fade-up-3"><div class="philo-icon">📈</div><div class="philo-title">SEO-First</div><div class="philo-desc">Built with search traffic in mind. Static generation, meta tags, structured data, and strategic keyword targeting.</div></div>
-      <div class="philo-card fade-up fade-up-4"><div class="philo-icon">⚡</div><div class="philo-title">Instant & Free</div><div class="philo-desc">No sign-up, no login, no premium tier. Open the site, use the tool. That simple.</div></div>
-      <div class="philo-card fade-up fade-up-5"><div class="philo-icon">🔧</div><div class="philo-title">Full-Stack Solo</div><div class="philo-desc">Design, development, deployment, SEO, marketing — all done by one developer. End to end.</div></div>
+      <div class="philo-card fade-up"><div class="philo-icon">💸</div><div class="philo-title t" data-ko="$0 운영비" data-en="$0 Operating Cost">$0 운영비</div><div class="philo-desc t" data-ko="모든 서비스는 Vercel 무료 플랜으로 운영됩니다. DB 비용도, 서버 비용도 없습니다. 순수 프론트엔드 + 서버리스." data-en="Every service runs on Vercel's free tier. No database fees, no server bills. Pure front-end + serverless.">모든 서비스는 Vercel 무료 플랜으로 운영됩니다. DB 비용도, 서버 비용도 없습니다. 순수 프론트엔드 + 서버리스.</div></div>
+      <div class="philo-card fade-up fade-up-1"><div class="philo-icon">🎨</div><div class="philo-title t" data-ko="고유한 마스코트" data-en="Unique Mascots">고유한 마스코트</div><div class="philo-desc t" data-ko="각 서비스는 자신만의 개성을 가집니다 — 카피바라, 쿼카, 코알라, 네온, 낙서. 평범한 SaaS 템플릿은 없습니다." data-en="Each service has its own personality — capybara, quokka, koala, neon, doodles. No generic SaaS templates.">각 서비스는 자신만의 개성을 가집니다 — 카피바라, 쿼카, 코알라, 네온, 낙서. 평범한 SaaS 템플릿은 없습니다.</div></div>
+      <div class="philo-card fade-up fade-up-2"><div class="philo-icon">🌐</div><div class="philo-title t" data-ko="다국어 지원" data-en="Multilingual">다국어 지원</div><div class="philo-desc t" data-ko="대부분의 서비스가 3~4개 언어(한국어, 영어, 일본어, 중국어)를 지원해 글로벌 사용자에게 다가갑니다." data-en="Most services support 3-4 languages (Korean, English, Japanese, Chinese) to reach global audiences.">대부분의 서비스가 3~4개 언어(한국어, 영어, 일본어, 중국어)를 지원해 글로벌 사용자에게 다가갑니다.</div></div>
+      <div class="philo-card fade-up fade-up-3"><div class="philo-icon">📈</div><div class="philo-title t" data-ko="SEO 최우선" data-en="SEO-First">SEO 최우선</div><div class="philo-desc t" data-ko="검색 트래픽을 염두에 두고 제작합니다. 정적 생성, 메타태그, 구조화 데이터, 전략적 키워드 타깃팅." data-en="Built with search traffic in mind. Static generation, meta tags, structured data, and strategic keyword targeting.">검색 트래픽을 염두에 두고 제작합니다. 정적 생성, 메타태그, 구조화 데이터, 전략적 키워드 타깃팅.</div></div>
+      <div class="philo-card fade-up fade-up-4"><div class="philo-icon">⚡</div><div class="philo-title t" data-ko="즉시, 무료" data-en="Instant & Free">즉시, 무료</div><div class="philo-desc t" data-ko="회원가입 없음, 로그인 없음, 프리미엄 없음. 사이트를 열고 바로 사용. 그게 전부입니다." data-en="No sign-up, no login, no premium tier. Open the site, use the tool. That simple.">회원가입 없음, 로그인 없음, 프리미엄 없음. 사이트를 열고 바로 사용. 그게 전부입니다.</div></div>
+      <div class="philo-card fade-up fade-up-5"><div class="philo-icon">🔧</div><div class="philo-title t" data-ko="풀스택 솔로" data-en="Full-Stack Solo">풀스택 솔로</div><div class="philo-desc t" data-ko="디자인, 개발, 배포, SEO, 마케팅 — 모두 혼자 합니다. 처음부터 끝까지." data-en="Design, development, deployment, SEO, marketing — all done by one developer. End to end.">디자인, 개발, 배포, SEO, 마케팅 — 모두 혼자 합니다. 처음부터 끝까지.</div></div>
     </div>
   </section>
 
   <!-- Tech Stack -->
   <section class="techstack container">
-    <div class="section-label mono">TECH STACK</div>
-    <h2 class="section-title">What I work with.</h2>
+    <div class="section-label mono t" data-ko="기술 스택" data-en="TECH STACK">기술 스택</div>
+    <h2 class="section-title t" data-ko="사용하는 기술." data-en="What I work with.">사용하는 기술.</h2>
     <div class="stack-pills">
       <span class="stack-pill">React</span><span class="stack-pill">Next.js</span><span class="stack-pill">TypeScript</span>
       <span class="stack-pill">Tailwind CSS</span><span class="stack-pill">Vercel</span><span class="stack-pill">Node.js</span>
@@ -349,16 +423,16 @@
 
   <!-- Timeline -->
   <section class="timeline container">
-    <div class="section-label mono">TIMELINE</div>
-    <h2 class="section-title">Build log.</h2>
+    <div class="section-label mono t" data-ko="타임라인" data-en="TIMELINE">타임라인</div>
+    <h2 class="section-title t" data-ko="빌드 로그." data-en="Build log.">빌드 로그.</h2>
     <div class="timeline-list">
-      <div class="timeline-item fade-up"><div class="timeline-dot" style="background:#059669"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text">SEOKoala — free SEO audit dashboard</div></div>
-      <div class="timeline-item fade-up fade-up-1"><div class="timeline-dot" style="background:#10B981"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text">QuokkaTick — live server time checker</div></div>
-      <div class="timeline-item fade-up fade-up-2"><div class="timeline-dot" style="background:#2563EB"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text">PureTxt — clean text toolkit (EN/JA/ZH)</div></div>
-      <div class="timeline-item fade-up fade-up-3"><div class="timeline-dot" style="background:#F59E0B"></div><div class="timeline-date mono">2026.02</div><div class="timeline-text">DoodleChill — ambient sound + doodle focus tool</div></div>
-      <div class="timeline-item fade-up fade-up-4"><div class="timeline-dot" style="background:#06B6D4"></div><div class="timeline-date mono">2026.02</div><div class="timeline-text">PromptNeon — curated AI prompt library</div></div>
-      <div class="timeline-item fade-up fade-up-5"><div class="timeline-dot" style="background:#D4A574"></div><div class="timeline-date mono">2026.01</div><div class="timeline-text">CapyBar — developer toolkit with capybara mascot</div></div>
-      <div class="timeline-item fade-up fade-up-6"><div class="timeline-dot" style="background:#6366F1"></div><div class="timeline-date mono">2026.01</div><div class="timeline-text">Started building micro-services portfolio</div></div>
+      <div class="timeline-item fade-up"><div class="timeline-dot" style="background:#059669"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text t" data-ko="SEOKoala — 무료 SEO 감사 대시보드" data-en="SEOKoala — free SEO audit dashboard">SEOKoala — 무료 SEO 감사 대시보드</div></div>
+      <div class="timeline-item fade-up fade-up-1"><div class="timeline-dot" style="background:#10B981"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text t" data-ko="QuokkaTick — 실시간 서버 시간 확인기" data-en="QuokkaTick — live server time checker">QuokkaTick — 실시간 서버 시간 확인기</div></div>
+      <div class="timeline-item fade-up fade-up-2"><div class="timeline-dot" style="background:#2563EB"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text t" data-ko="PureTxt — 깔끔한 텍스트 툴킷 (영/일/중)" data-en="PureTxt — clean text toolkit (EN/JA/ZH)">PureTxt — 깔끔한 텍스트 툴킷 (영/일/중)</div></div>
+      <div class="timeline-item fade-up fade-up-3"><div class="timeline-dot" style="background:#F59E0B"></div><div class="timeline-date mono">2026.02</div><div class="timeline-text t" data-ko="DoodleChill — 앰비언트 사운드 + 낙서 집중 도구" data-en="DoodleChill — ambient sound + doodle focus tool">DoodleChill — 앰비언트 사운드 + 낙서 집중 도구</div></div>
+      <div class="timeline-item fade-up fade-up-4"><div class="timeline-dot" style="background:#06B6D4"></div><div class="timeline-date mono">2026.02</div><div class="timeline-text t" data-ko="PromptNeon — 큐레이션된 AI 프롬프트 라이브러리" data-en="PromptNeon — curated AI prompt library">PromptNeon — 큐레이션된 AI 프롬프트 라이브러리</div></div>
+      <div class="timeline-item fade-up fade-up-5"><div class="timeline-dot" style="background:#D4A574"></div><div class="timeline-date mono">2026.01</div><div class="timeline-text t" data-ko="CapyBar — 카피바라 마스코트 개발자 툴킷" data-en="CapyBar — developer toolkit with capybara mascot">CapyBar — 카피바라 마스코트 개발자 툴킷</div></div>
+      <div class="timeline-item fade-up fade-up-6"><div class="timeline-dot" style="background:#6366F1"></div><div class="timeline-date mono">2026.01</div><div class="timeline-text t" data-ko="마이크로 서비스 포트폴리오 구축 시작" data-en="Started building micro-services portfolio">마이크로 서비스 포트폴리오 구축 시작</div></div>
     </div>
   </section>
 
@@ -366,8 +440,8 @@
   <section id="contact" class="contact container">
     <div class="contact-box fade-up">
       <div style="font-size:32px;margin-bottom:12px">👋</div>
-      <h2>Let's connect</h2>
-      <p>Interested in collaboration, feedback, or just want to chat about building side projects with zero budget? Reach out anytime.</p>
+      <h2 class="t" data-ko="연락해요" data-en="Let's connect">연락해요</h2>
+      <p class="t" data-ko="협업, 피드백, 또는 제로 비용 사이드 프로젝트에 대해 이야기하고 싶으신가요? 언제든 연락 주세요." data-en="Interested in collaboration, feedback, or just want to chat about building side projects with zero budget? Reach out anytime.">협업, 피드백, 또는 제로 비용 사이드 프로젝트에 대해 이야기하고 싶으신가요? 언제든 연락 주세요.</p>
       <div class="contact-links">
         <a href="https://github.com/kimcheolgi" target="_blank" class="contact-link"><span>🐙</span> GitHub</a>
         <a href="mailto:kimchelgi03@gmail.com" class="contact-link"><span>📧</span> Email</a>
@@ -376,26 +450,47 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <div class="logo mono"><span class="accent">&lt;</span>Deepveloper<span class="accent">/&gt;</span> — Built with passion, deployed for free.</div>
+    <div class="logo mono"><span class="accent">&lt;</span>Deepveloper<span class="accent">/&gt;</span> — <span class="t" data-ko="열정으로 만들고, 무료로 배포." data-en="Built with passion, deployed for free.">열정으로 만들고, 무료로 배포.</span></div>
     <div class="copy">© 2026</div>
   </footer>
 
   <script>
-    // Nav scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
         document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
       });
     });
+
+    let currentLang = 'ko';
+    const heroH1 = {
+      ko: '운영비 <span class="hl-green">$0으로</span> 돌아가는<br>웹 서비스를 만듭니다.',
+      en: 'I build<span class="hl-purple"> web services</span><br>that cost<span class="hl-green"> $0</span> to run.'
+    };
+
+    function toggleLang() {
+      currentLang = currentLang === 'ko' ? 'en' : 'ko';
+      document.getElementById('langBtn').textContent = currentLang === 'ko' ? 'EN' : '한';
+      document.documentElement.lang = currentLang;
+      document.querySelectorAll('.t').forEach(el => {
+        const text = el.dataset[currentLang];
+        if (text !== undefined) el.textContent = text;
+      });
+      document.getElementById('hero-h1').innerHTML = heroH1[currentLang];
+    }
+
+    function switchTab(tab) {
+      document.querySelectorAll('.history-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.history-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      document.getElementById('panel-' + tab).classList.add('active');
+    }
   </script>
 </body>
 </html>
