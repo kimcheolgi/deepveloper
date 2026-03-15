@@ -74,7 +74,7 @@
     .project-card:hover::before { opacity: 1; }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
     .project-info { display: flex; align-items: center; gap: 10px; }
-    .project-mascot { font-size: 28px; animation: float 3s ease-in-out infinite; }
+    .project-mascot { width: 36px; height: 36px; object-fit: contain; border-radius: 8px; animation: float 3s ease-in-out infinite; flex-shrink: 0; }
     .project-name { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
     .project-cat { font-size: 11px; font-weight: 600; margin-left: 8px; padding: 2px 8px; border-radius: 6px; }
     .project-tagline { font-size: 13px; color: #A1A1AA; font-weight: 500; margin-top: 2px; }
@@ -188,7 +188,7 @@
     <div class="project-card fade-up fade-up-1" style="--accent:#D4A574" onclick="window.open('https://capybar.dev','_blank')">
       <div class="project-header">
         <div class="project-info">
-          <span class="project-mascot" style="animation-delay:0s">🦫</span>
+          <img class="project-mascot" src="https://capybar.dev/favicon.ico" alt="CapyBar" style="animation-delay:0s">
           <div>
             <div class="project-name">CapyBar <span class="project-cat" style="color:#D4A574;background:#D4A57415;border:1px solid #D4A57425">Developer Tools</span></div>
             <div class="project-tagline">Your chill developer toolkit</div>
@@ -210,7 +210,7 @@
     <div class="project-card fade-up fade-up-2" style="--accent:#10B981" onclick="window.open('https://quokkatick.com','_blank')">
       <div class="project-header">
         <div class="project-info">
-          <span class="project-mascot" style="animation-delay:0.3s">🐹</span>
+          <img class="project-mascot" src="https://quokkatick.com/favicon.ico" alt="QuokkaTick" style="animation-delay:0.3s">
           <div>
             <div class="project-name">QuokkaTick <span class="project-cat" style="color:#10B981;background:#10B98115;border:1px solid #10B98125">Utility</span></div>
             <div class="project-tagline">Live server time, ticking in real-time</div>
@@ -232,7 +232,7 @@
     <div class="project-card fade-up fade-up-3" style="--accent:#2563EB" onclick="window.open('https://puretxt.com','_blank')">
       <div class="project-header">
         <div class="project-info">
-          <span class="project-mascot" style="animation-delay:0.6s">✨</span>
+          <img class="project-mascot" src="https://puretxt.com/favicon.ico" alt="PureTxt" style="animation-delay:0.6s">
           <div>
             <div class="project-name">PureTxt <span class="project-cat" style="color:#2563EB;background:#2563EB15;border:1px solid #2563EB25">Text Tools</span></div>
             <div class="project-tagline">Clean text tools for everyone</div>
@@ -254,7 +254,7 @@
     <div class="project-card fade-up fade-up-4" style="--accent:#06B6D4" onclick="window.open('https://promptneon.com','_blank')">
       <div class="project-header">
         <div class="project-info">
-          <span class="project-mascot" style="animation-delay:0.9s">⚡</span>
+          <img class="project-mascot" src="https://promptneon.com/favicon.ico" alt="PromptNeon" style="animation-delay:0.9s">
           <div>
             <div class="project-name">PromptNeon <span class="project-cat" style="color:#06B6D4;background:#06B6D415;border:1px solid #06B6D425">AI / Prompts</span></div>
             <div class="project-tagline">Curated AI prompts, neon-powered</div>
@@ -276,7 +276,7 @@
     <div class="project-card fade-up fade-up-5" style="--accent:#F59E0B" onclick="window.open('https://doodlechill.com','_blank')">
       <div class="project-header">
         <div class="project-info">
-          <span class="project-mascot" style="animation-delay:1.2s">🎨</span>
+          <img class="project-mascot" src="https://doodlechill.com/favicon.ico" alt="DoodleChill" style="animation-delay:1.2s">
           <div>
             <div class="project-name">DoodleChill <span class="project-cat" style="color:#F59E0B;background:#F59E0B15;border:1px solid #F59E0B25">Focus / Wellness</span></div>
             <div class="project-tagline">Hand-drawn scenes with ambient sounds</div>
@@ -298,7 +298,7 @@
     <div class="project-card fade-up fade-up-6" style="--accent:#059669" onclick="window.open('https://seokoala.dev','_blank')">
       <div class="project-header">
         <div class="project-info">
-          <span class="project-mascot" style="animation-delay:1.5s">🐨</span>
+          <img class="project-mascot" src="https://seokoala.dev/favicon.ico" alt="SEOKoala" style="animation-delay:1.5s">
           <div>
             <div class="project-name">SEOKoala <span class="project-cat" style="color:#059669;background:#05966915;border:1px solid #05966925">SEO Tools</span></div>
             <div class="project-tagline">Your friendly SEO checkup</div>
@@ -368,10 +368,9 @@
       <h2>Let's connect</h2>
       <p>Interested in collaboration, feedback, or just want to chat about building side projects with zero budget? Reach out anytime.</p>
       <div class="contact-links">
-        <a href="https://github.com/" target="_blank" class="contact-link"><span>🐙</span> GitHub</a>
-        <a href="https://twitter.com/" target="_blank" class="contact-link"><span>🐦</span> Twitter/X</a>
-        <a href="mailto:hello@deepveloper.com" class="contact-link"><span>📧</span> Email</a>
-        <a href="https://disquiet.io/" target="_blank" class="contact-link"><span>🇰🇷</span> Disquiet</a>
+        <a href="https://github.com/kimcheolgi" target="_blank" class="contact-link"><span>🐙</span> GitHub</a>
+        <a href="mailto:kimchelgi03@gmail.com" class="contact-link"><span>📧</span> Email</a>
+        <a href="https://disquiet.io/@ironkey" target="_blank" class="contact-link"><span>🇰🇷</span> Disquiet</a>
       </div>
     </div>
   </section>
