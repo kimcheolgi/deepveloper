@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepveloper — Full-Stack Developer & Maker</title>
+  <meta name="description" content="Full-stack developer building ad-monetized micro-services with zero operating costs. 7 live projects, all running on Vercel's free tier.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deepveloper — Full-Stack Developer & Maker">
+  <meta property="og:description" content="I build web services that cost $0 to run. 7 live projects with unique mascots.">
+  <meta property="og:url" content="https://blog.deepveloper.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deepveloper — Full-Stack Developer & Maker">
+  <link rel="canonical" href="https://blog.deepveloper.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: #6366F1; color: white; }
+    body { background: #0A0A0F; color: #E4E4E7; font-family: 'Outfit', -apple-system, sans-serif; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Animations */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0%,100% { opacity: 0.4; } 50% { opacity: 0.7; } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .fade-up-1 { animation-delay: 0.08s; } .fade-up-2 { animation-delay: 0.16s; }
+    .fade-up-3 { animation-delay: 0.24s; } .fade-up-4 { animation-delay: 0.32s; }
+    .fade-up-5 { animation-delay: 0.40s; } .fade-up-6 { animation-delay: 0.48s; }
+
+    /* Background */
+    .bg-grid { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .bg-grid .line-v { position: absolute; top: 0; width: 1px; height: 100%; background: linear-gradient(180deg, transparent, rgba(99,102,241,0.03), transparent); }
+    .bg-grid .line-h { position: absolute; left: 0; height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(99,102,241,0.03), transparent); }
+    .bg-orb { position: absolute; border-radius: 50%; }
+    .bg-orb-1 { top: 15%; left: 20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(99,102,241,0.04) 0%, transparent 70%); animation: glow 6s ease-in-out infinite; }
+    .bg-orb-2 { top: 60%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(16,185,129,0.03) 0%, transparent 70%); animation: glow 8s ease-in-out 2s infinite; }
+
+    /* Nav */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 32px; position: sticky; top: 0; z-index: 100; transition: all 0.3s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(10,10,15,0.88); backdrop-filter: blur(20px); border-bottom-color: rgba(99,102,241,0.1); }
+    .nav-logo { font-size: 20px; font-weight: 900; letter-spacing: -1px; }
+    .nav-logo .accent { color: #6366F1; }
+    .nav-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500; }
+    .nav-links a { color: #71717A; transition: color 0.2s; }
+    .nav-links a:hover { color: #E4E4E7; }
+
+    /* Sections */
+    .container { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6366F1; font-weight: 600; letter-spacing: 2px; margin-bottom: 8px; }
+    .section-title { font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 32px; }
+
+    /* Hero */
+    .hero { padding: 80px 32px 60px; }
+    .hero h1 { font-size: clamp(32px, 6vw, 56px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; }
+    .hero h1 .hl-purple { color: #6366F1; }
+    .hero h1 .hl-green { color: #10B981; }
+    .hero p { font-size: 17px; color: #A1A1AA; line-height: 1.8; max-width: 560px; font-weight: 400; }
+    .hero-badges { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+    .hero-badge { display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; }
+    .hero-badge.purple { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.15); color: #A5B4FC; }
+    .hero-badge.green { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.15); color: #6EE7B7; }
+    .hero-badge.pink { background: rgba(244,114,182,0.08); border: 1px solid rgba(244,114,182,0.15); color: #F9A8D4; }
+
+    /* Project Cards */
+    .projects { padding: 40px 32px 60px; }
+    .project-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px 28px; transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; position: relative; margin-bottom: 16px; }
+    .project-card:hover { transform: translateY(-8px) scale(1.01); }
+    .project-card::before { content: ''; position: absolute; inset: -1px; border-radius: 17px; background: linear-gradient(135deg, var(--accent), transparent 60%); z-index: -1; opacity: 0; transition: opacity 0.3s; }
+    .project-card:hover::before { opacity: 1; }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+    .project-info { display: flex; align-items: center; gap: 10px; }
+    .project-mascot { font-size: 28px; animation: float 3s ease-in-out infinite; }
+    .project-name { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+    .project-cat { font-size: 11px; font-weight: 600; margin-left: 8px; padding: 2px 8px; border-radius: 6px; }
+    .project-tagline { font-size: 13px; color: #A1A1AA; font-weight: 500; margin-top: 2px; }
+    .project-url { font-size: 11px; font-weight: 600; font-family: 'JetBrains Mono', monospace; padding: 4px 10px; border-radius: 6px; transition: all 0.2s; }
+    .project-url:hover { filter: brightness(1.3); }
+    .project-desc { font-size: 13px; color: #A1A1AA; line-height: 1.7; margin-bottom: 14px; }
+    .project-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .tech-pills { display: flex; gap: 5px; flex-wrap: wrap; }
+    .tech-pill { font-size: 10px; font-weight: 600; color: #A1A1AA; padding: 3px 8px; border-radius: 5px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); font-family: 'JetBrains Mono', monospace; transition: all 0.2s; }
+    .tech-pill:hover { transform: translateY(-1px); filter: brightness(1.2); }
+    .project-stats { display: flex; gap: 12px; }
+    .stat { text-align: center; }
+    .stat-value { font-size: 14px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
+    .stat-label { font-size: 9px; color: #71717A; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Philosophy */
+    .philosophy { padding: 40px 32px 60px; }
+    .philo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .philo-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 20px; }
+    .philo-icon { font-size: 24px; margin-bottom: 10px; }
+    .philo-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .philo-desc { font-size: 12px; color: #A1A1AA; line-height: 1.65; }
+
+    /* Tech Stack */
+    .techstack { padding: 20px 32px 60px; }
+    .stack-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .stack-pill { font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12); color: #A5B4FC; font-family: 'JetBrains Mono', monospace; transition: all 0.2s; }
+    .stack-pill:hover { transform: translateY(-1px); filter: brightness(1.2); }
+
+    /* Timeline */
+    .timeline { padding: 20px 32px 60px; }
+    .timeline-list { border-left: 2px solid rgba(99,102,241,0.15); padding-left: 24px; }
+    .timeline-item { position: relative; margin-bottom: 20px; }
+    .timeline-dot { position: absolute; left: -31px; top: 4px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #0A0A0F; }
+    .timeline-date { font-size: 11px; font-weight: 600; color: #6366F1; font-family: 'JetBrains Mono', monospace; margin-bottom: 2px; }
+    .timeline-text { font-size: 14px; font-weight: 600; }
+
+    /* Contact */
+    .contact { padding: 40px 32px 80px; }
+    .contact-box { background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(16,185,129,0.04)); border: 1px solid rgba(99,102,241,0.12); border-radius: 20px; padding: 40px 36px; text-align: center; }
+    .contact-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+    .contact-box p { font-size: 14px; color: #A1A1AA; line-height: 1.7; max-width: 400px; margin: 0 auto 24px; }
+    .contact-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .contact-link { display: flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); font-size: 13px; font-weight: 600; transition: all 0.2s; }
+    .contact-link:hover { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.2); }
+
+    /* Footer */
+    footer { padding: 24px 32px; text-align: center; border-top: 1px solid rgba(255,255,255,0.04); }
+    footer .logo { font-size: 12px; color: #3F3F46; font-family: 'JetBrains Mono', monospace; }
+    footer .logo .accent { color: #6366F1; }
+    footer .copy { font-size: 11px; color: #27272A; font-family: 'JetBrains Mono', monospace; margin-top: 4px; }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .hero { padding: 50px 20px 40px; }
+      .hero h1 { font-size: 28px; letter-spacing: -1px; }
+      .hero p { font-size: 15px; }
+      .projects, .philosophy, .techstack, .timeline, .contact { padding-left: 20px; padding-right: 20px; }
+      .project-card { padding: 18px 20px; }
+      .nav-links { gap: 14px; font-size: 12px; }
+      nav { padding: 12px 20px; }
+      .section-title { font-size: 22px; }
+      .philo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg-grid">
+    <div class="line-v" style="left:12.5%"></div><div class="line-v" style="left:25%"></div>
+    <div class="line-v" style="left:37.5%"></div><div class="line-v" style="left:50%"></div>
+    <div class="line-v" style="left:62.5%"></div><div class="line-v" style="left:75%"></div>
+    <div class="line-v" style="left:87.5%"></div>
+    <div class="line-h" style="top:10%"></div><div class="line-h" style="top:20%"></div>
+    <div class="line-h" style="top:30%"></div><div class="line-h" style="top:40%"></div>
+    <div class="line-h" style="top:50%"></div><div class="line-h" style="top:60%"></div>
+    <div class="line-h" style="top:70%"></div><div class="line-h" style="top:80%"></div>
+    <div class="line-h" style="top:90%"></div>
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <div class="nav-logo mono"><span class="accent">&lt;</span>Deep<span class="accent">veloper</span><span class="accent">/&gt;</span></div>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero container fade-up">
+    <div class="section-label mono">FULL-STACK DEVELOPER & MAKER</div>
+    <h1>I build<span class="hl-purple"> web services</span><br>that cost<span class="hl-green"> $0</span> to run.</h1>
+    <p>Full-stack developer obsessed with building ad-monetized micro-services with zero operating costs. Each project has its own personality, mascot, and revenue strategy — all deployed on Vercel's free tier.</p>
+    <div class="hero-badges">
+      <div class="hero-badge purple"><span>🚀</span> 7 Live Projects</div>
+      <div class="hero-badge green"><span>💰</span> $0/month Total Cost</div>
+      <div class="hero-badge pink"><span>🌐</span> 4 Languages Supported</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects container">
+    <div class="section-label mono">PROJECTS</div>
+    <h2 class="section-title">Every service. Zero server costs.</h2>
+
+    <div class="project-card fade-up fade-up-1" style="--accent:#D4A574" onclick="window.open('https://capybar.dev','_blank')">
+      <div class="project-header">
+        <div class="project-info">
+          <span class="project-mascot" style="animation-delay:0s">🦫</span>
+          <div>
+            <div class="project-name">CapyBar <span class="project-cat" style="color:#D4A574;background:#D4A57415;border:1px solid #D4A57425">Developer Tools</span></div>
+            <div class="project-tagline">Your chill developer toolkit</div>
+          </div>
+        </div>
+        <a href="https://capybar.dev" target="_blank" class="project-url" style="color:#D4A574;border:1px solid #D4A57440" onclick="event.stopPropagation()">capybar.dev ↗</a>
+      </div>
+      <p class="project-desc">11 free developer tools: JSON formatter, Base64, JWT decoder, UUID generator, password generator, color converter, and more. Capybara mascot included.</p>
+      <div class="project-footer">
+        <div class="tech-pills"><span class="tech-pill">React</span><span class="tech-pill">Vite</span><span class="tech-pill">Vercel</span></div>
+        <div class="project-stats">
+          <div class="stat"><div class="stat-value" style="color:#D4A574">11+</div><div class="stat-label">tools</div></div>
+          <div class="stat"><div class="stat-value" style="color:#D4A574">3</div><div class="stat-label">languages</div></div>
+          <div class="stat"><div class="stat-value" style="color:#D4A574">$0</div><div class="stat-label">cost</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up fade-up-2" style="--accent:#10B981" onclick="window.open('https://quokkatick.com','_blank')">
+      <div class="project-header">
+        <div class="project-info">
+          <span class="project-mascot" style="animation-delay:0.3s">🐹</span>
+          <div>
+            <div class="project-name">QuokkaTick <span class="project-cat" style="color:#10B981;background:#10B98115;border:1px solid #10B98125">Utility</span></div>
+            <div class="project-tagline">Live server time, ticking in real-time</div>
+          </div>
+        </div>
+        <a href="https://quokkatick.com" target="_blank" class="project-url" style="color:#10B981;border:1px solid #10B98140" onclick="event.stopPropagation()">quokkatick.com ↗</a>
+      </div>
+      <p class="project-desc">Real-time server time checker with millisecond precision. Enter any URL and watch the server's clock tick live — perfect for ticketing and course registration.</p>
+      <div class="project-footer">
+        <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">Serverless</span><span class="tech-pill">rAF</span></div>
+        <div class="project-stats">
+          <div class="stat"><div class="stat-value" style="color:#10B981">ms</div><div class="stat-label">precision</div></div>
+          <div class="stat"><div class="stat-value" style="color:#10B981">30s</div><div class="stat-label">sync</div></div>
+          <div class="stat"><div class="stat-value" style="color:#10B981">$0</div><div class="stat-label">cost</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up fade-up-3" style="--accent:#2563EB" onclick="window.open('https://puretxt.com','_blank')">
+      <div class="project-header">
+        <div class="project-info">
+          <span class="project-mascot" style="animation-delay:0.6s">✨</span>
+          <div>
+            <div class="project-name">PureTxt <span class="project-cat" style="color:#2563EB;background:#2563EB15;border:1px solid #2563EB25">Text Tools</span></div>
+            <div class="project-tagline">Clean text tools for everyone</div>
+          </div>
+        </div>
+        <a href="https://puretxt.com" target="_blank" class="project-url" style="color:#2563EB;border:1px solid #2563EB40" onclick="event.stopPropagation()">puretxt.com ↗</a>
+      </div>
+      <p class="project-desc">4 essential text tools: grammar checker (LanguageTool), character counter, markdown preview, and text transformer. Supports English, Japanese, and Chinese.</p>
+      <div class="project-footer">
+        <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">LanguageTool</span><span class="tech-pill">Vercel</span></div>
+        <div class="project-stats">
+          <div class="stat"><div class="stat-value" style="color:#2563EB">4</div><div class="stat-label">tools</div></div>
+          <div class="stat"><div class="stat-value" style="color:#2563EB">3</div><div class="stat-label">languages</div></div>
+          <div class="stat"><div class="stat-value" style="color:#2563EB">$0</div><div class="stat-label">cost</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up fade-up-4" style="--accent:#06B6D4" onclick="window.open('https://promptneon.com','_blank')">
+      <div class="project-header">
+        <div class="project-info">
+          <span class="project-mascot" style="animation-delay:0.9s">⚡</span>
+          <div>
+            <div class="project-name">PromptNeon <span class="project-cat" style="color:#06B6D4;background:#06B6D415;border:1px solid #06B6D425">AI / Prompts</span></div>
+            <div class="project-tagline">Curated AI prompts, neon-powered</div>
+          </div>
+        </div>
+        <a href="https://promptneon.com" target="_blank" class="project-url" style="color:#06B6D4;border:1px solid #06B6D440" onclick="event.stopPropagation()">promptneon.com ↗</a>
+      </div>
+      <p class="project-desc">Free curated collection of ready-to-use AI prompts for ChatGPT and Claude. Browse by category — coding, writing, marketing, business. One-click copy.</p>
+      <div class="project-footer">
+        <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">SSG</span><span class="tech-pill">Vercel</span></div>
+        <div class="project-stats">
+          <div class="stat"><div class="stat-value" style="color:#06B6D4">8+</div><div class="stat-label">categories</div></div>
+          <div class="stat"><div class="stat-value" style="color:#06B6D4">2</div><div class="stat-label">models</div></div>
+          <div class="stat"><div class="stat-value" style="color:#06B6D4">$0</div><div class="stat-label">cost</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up fade-up-5" style="--accent:#F59E0B" onclick="window.open('https://doodlechill.com','_blank')">
+      <div class="project-header">
+        <div class="project-info">
+          <span class="project-mascot" style="animation-delay:1.2s">🎨</span>
+          <div>
+            <div class="project-name">DoodleChill <span class="project-cat" style="color:#F59E0B;background:#F59E0B15;border:1px solid #F59E0B25">Focus / Wellness</span></div>
+            <div class="project-tagline">Hand-drawn scenes with ambient sounds</div>
+          </div>
+        </div>
+        <a href="https://doodlechill.com" target="_blank" class="project-url" style="color:#F59E0B;border:1px solid #F59E0B40" onclick="event.stopPropagation()">doodlechill.com ↗</a>
+      </div>
+      <p class="project-desc">Distraction-free ambient sound player with 7 cozy hand-drawn doodle scenes. Built-in Pomodoro timer. Designed for 45-120 minute focus sessions.</p>
+      <div class="project-footer">
+        <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">Web Audio</span><span class="tech-pill">SVG Anim</span></div>
+        <div class="project-stats">
+          <div class="stat"><div class="stat-value" style="color:#F59E0B">7</div><div class="stat-label">scenes</div></div>
+          <div class="stat"><div class="stat-value" style="color:#F59E0B">🍅</div><div class="stat-label">timer</div></div>
+          <div class="stat"><div class="stat-value" style="color:#F59E0B">$0</div><div class="stat-label">cost</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-up fade-up-6" style="--accent:#059669" onclick="window.open('https://seokoala.dev','_blank')">
+      <div class="project-header">
+        <div class="project-info">
+          <span class="project-mascot" style="animation-delay:1.5s">🐨</span>
+          <div>
+            <div class="project-name">SEOKoala <span class="project-cat" style="color:#059669;background:#05966915;border:1px solid #05966925">SEO Tools</span></div>
+            <div class="project-tagline">Your friendly SEO checkup</div>
+          </div>
+        </div>
+        <a href="https://seokoala.dev" target="_blank" class="project-url" style="color:#059669;border:1px solid #05966940" onclick="event.stopPropagation()">seokoala.dev ↗</a>
+      </div>
+      <p class="project-desc">Free SEO audit dashboard: enter a URL and get instant diagnosis on meta tags, structure, social previews, and technical SEO. Koala mascot judges your score.</p>
+      <div class="project-footer">
+        <div class="tech-pills"><span class="tech-pill">Next.js</span><span class="tech-pill">Serverless</span><span class="tech-pill">HTML Parser</span></div>
+        <div class="project-stats">
+          <div class="stat"><div class="stat-value" style="color:#059669">18+</div><div class="stat-label">checks</div></div>
+          <div class="stat"><div class="stat-value" style="color:#059669">AI</div><div class="stat-label">keywords</div></div>
+          <div class="stat"><div class="stat-value" style="color:#059669">$0</div><div class="stat-label">cost</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section id="philosophy" class="philosophy container">
+    <div class="section-label mono">PHILOSOPHY</div>
+    <h2 class="section-title">How I build things.</h2>
+    <div class="philo-grid">
+      <div class="philo-card fade-up"><div class="philo-icon">💸</div><div class="philo-title">$0 Operating Cost</div><div class="philo-desc">Every service runs on Vercel's free tier. No database fees, no server bills. Pure front-end + serverless.</div></div>
+      <div class="philo-card fade-up fade-up-1"><div class="philo-icon">🎨</div><div class="philo-title">Unique Mascots</div><div class="philo-desc">Each service has its own personality — capybara, quokka, koala, neon, doodles. No generic SaaS templates.</div></div>
+      <div class="philo-card fade-up fade-up-2"><div class="philo-icon">🌐</div><div class="philo-title">Multilingual</div><div class="philo-desc">Most services support 3-4 languages (Korean, English, Japanese, Chinese) to reach global audiences.</div></div>
+      <div class="philo-card fade-up fade-up-3"><div class="philo-icon">📈</div><div class="philo-title">SEO-First</div><div class="philo-desc">Built with search traffic in mind. Static generation, meta tags, structured data, and strategic keyword targeting.</div></div>
+      <div class="philo-card fade-up fade-up-4"><div class="philo-icon">⚡</div><div class="philo-title">Instant & Free</div><div class="philo-desc">No sign-up, no login, no premium tier. Open the site, use the tool. That simple.</div></div>
+      <div class="philo-card fade-up fade-up-5"><div class="philo-icon">🔧</div><div class="philo-title">Full-Stack Solo</div><div class="philo-desc">Design, development, deployment, SEO, marketing — all done by one developer. End to end.</div></div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="techstack container">
+    <div class="section-label mono">TECH STACK</div>
+    <h2 class="section-title">What I work with.</h2>
+    <div class="stack-pills">
+      <span class="stack-pill">React</span><span class="stack-pill">Next.js</span><span class="stack-pill">TypeScript</span>
+      <span class="stack-pill">Tailwind CSS</span><span class="stack-pill">Vercel</span><span class="stack-pill">Node.js</span>
+      <span class="stack-pill">Vite</span><span class="stack-pill">GitHub Pages</span><span class="stack-pill">Google AdSense</span>
+      <span class="stack-pill">Google Analytics</span><span class="stack-pill">LanguageTool API</span><span class="stack-pill">SVG Animation</span>
+      <span class="stack-pill">Web Audio API</span><span class="stack-pill">Serverless Functions</span><span class="stack-pill">SEO</span>
+      <span class="stack-pill">i18n</span>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline container">
+    <div class="section-label mono">TIMELINE</div>
+    <h2 class="section-title">Build log.</h2>
+    <div class="timeline-list">
+      <div class="timeline-item fade-up"><div class="timeline-dot" style="background:#059669"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text">SEOKoala — free SEO audit dashboard</div></div>
+      <div class="timeline-item fade-up fade-up-1"><div class="timeline-dot" style="background:#10B981"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text">QuokkaTick — live server time checker</div></div>
+      <div class="timeline-item fade-up fade-up-2"><div class="timeline-dot" style="background:#2563EB"></div><div class="timeline-date mono">2026.03</div><div class="timeline-text">PureTxt — clean text toolkit (EN/JA/ZH)</div></div>
+      <div class="timeline-item fade-up fade-up-3"><div class="timeline-dot" style="background:#F59E0B"></div><div class="timeline-date mono">2026.02</div><div class="timeline-text">DoodleChill — ambient sound + doodle focus tool</div></div>
+      <div class="timeline-item fade-up fade-up-4"><div class="timeline-dot" style="background:#06B6D4"></div><div class="timeline-date mono">2026.02</div><div class="timeline-text">PromptNeon — curated AI prompt library</div></div>
+      <div class="timeline-item fade-up fade-up-5"><div class="timeline-dot" style="background:#D4A574"></div><div class="timeline-date mono">2026.01</div><div class="timeline-text">CapyBar — developer toolkit with capybara mascot</div></div>
+      <div class="timeline-item fade-up fade-up-6"><div class="timeline-dot" style="background:#6366F1"></div><div class="timeline-date mono">2026.01</div><div class="timeline-text">Started building micro-services portfolio</div></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact container">
+    <div class="contact-box fade-up">
+      <div style="font-size:32px;margin-bottom:12px">👋</div>
+      <h2>Let's connect</h2>
+      <p>Interested in collaboration, feedback, or just want to chat about building side projects with zero budget? Reach out anytime.</p>
+      <div class="contact-links">
+        <a href="https://github.com/" target="_blank" class="contact-link"><span>🐙</span> GitHub</a>
+        <a href="https://twitter.com/" target="_blank" class="contact-link"><span>🐦</span> Twitter/X</a>
+        <a href="mailto:hello@deepveloper.com" class="contact-link"><span>📧</span> Email</a>
+        <a href="https://disquiet.io/" target="_blank" class="contact-link"><span>🇰🇷</span> Disquiet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo mono"><span class="accent">&lt;</span>Deepveloper<span class="accent">/&gt;</span> — Built with passion, deployed for free.</div>
+    <div class="copy">© 2026</div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
